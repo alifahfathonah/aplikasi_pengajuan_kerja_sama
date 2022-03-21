@@ -93,7 +93,7 @@ class Dashboard extends CI_Controller {
 
 			$data['user'] = $this->session->all_userdata();
 			$data['total_data_pengajuan'] = $this->m_data_pengajuan->jumlah_data_pengajuan($this->session->userdata('id'))->result_array();
-			$data['total_implementasi_kerja_sama'] = $this->m_implementasi_kerja_sama->jumlah_implementasi_kerja_sama()->result_array();
+			$data['total_implementasi_kerja_sama'] = $this->m_implementasi_kerja_sama->jumlah_implementasi_kerja_sama_by_id($this->session->userdata('id'))->result_array();
 			$data['total_kerja_sama_eksternal'] = $this->m_kerja_sama_eksternal->jumlah_kerja_sama_eksternal()->result_array();
 			$data['total_kerja_sama_internal'] = $this->m_kerja_sama_internal->jumlah_kerja_sama_internal()->result_array();
 			$this->load->view('mitra/mitra_dashboard', $data);

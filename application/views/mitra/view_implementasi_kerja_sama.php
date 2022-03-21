@@ -33,11 +33,12 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Masa Berlaku</th>
+                                        <th>Masa Berakhir</th>
                                         <th>Lembaga Mitra</th>
                                         <th>Keterangan</th>
                                         <th>Jenis Perjanjian</th>
                                         <th>Kategori Kerja Sama</th>
+                                        <th>Masa Berlaku</th>
                                         <th>File Implementasi Kerja Sama</th>
                                        
                                     </tr>
@@ -48,22 +49,24 @@
                   foreach($implementasi_kerja_sama->result_array() as $i)
                   :
                   $no++;
-                  $masa_berlaku = $i['masa_berlaku'];
+                  $masa_berakhir = $i['masa_berakhir'];
                   $nama_mitra = $i['nama_mitra'];
                   $keterangan = $i['keterangan'];
                   $id_jenis_perjanjian = $i['bentuk_perjanjian'];
                   $nama_kategori_kerja_sama = $i['nama_kategori_kerja_sama'];
                   $file_implementasi_kerja_sama = $i['file_implementasi_kerja_sama'];
+                  $masa_berlaku = $i['masa_berlaku'];
                  
 
               ?>
                                     <tr>
                                         <td><?= $no ?></td>
-                                        <td><?= $masa_berlaku ?></td>
+                                        <td><?= $masa_berakhir ?></td>
                                         <td><?= $nama_mitra ?></td>
                                         <td><?= $keterangan ?></td>
                                         <td><?= $id_jenis_perjanjian ?></td>
                                         <td><?= $nama_kategori_kerja_sama?></td>
+                                        <td><?= $masa_berlaku ?></td>
                                         <td class="text-center">
                                             <div class="table-resposive">
                                                 <div class="table table-striped table-hover "><a type="button"

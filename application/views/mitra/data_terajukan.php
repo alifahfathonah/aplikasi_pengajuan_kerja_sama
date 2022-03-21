@@ -98,7 +98,6 @@
                                         <th>Negara Asal Pengajuan</th>
                                         <th>Status Pengajuan</th>
                                         <th>Kategori Kerjasama</th>
-                                        <th>Masa Berlaku</th>
                                         <th>Penerima</th>
                                         <th >Aksi</th>
                                     </tr>
@@ -119,7 +118,6 @@
                                   $status_pengajuan = $i['status_pengajuan'];
                                   $nama_kategori_kerja_sama = $i['nama_kategori_kerja_sama'];
                                   $nama_mitra = $i['nama_mitra'];
-                                  $masa_berlaku = $i['masa_berlaku'];
                                   $id_data_pengajuan = $i['id_data_pengajuan'];
                                  
                                  
@@ -142,7 +140,6 @@
                                         <td><?=  $negara_pengajuan ?></td>
                                         <td><?=  $status_pengajuan ?></td>
                                         <td><?=  $nama_kategori_kerja_sama ?></td>
-                                        <td><?= $masa_berlaku?></td>
                                         <td><?= $nama_mitra ?></td>
                                      
                                         <td>

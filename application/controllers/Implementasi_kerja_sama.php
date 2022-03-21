@@ -200,8 +200,8 @@ class Implementasi_kerja_sama extends CI_Controller {
 	public function view_mitra()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
-
-		$data['implementasi_kerja_sama'] = $this->m_implementasi_kerja_sama->get_implementasi_kerja_sama();
+		$id = $this->session->userdata('id');
+		$data['implementasi_kerja_sama'] = $this->m_implementasi_kerja_sama->get_implementasi_kerja_sama_by_id($id);
 
 		$this->load->view('mitra/view_implementasi_kerja_sama', $data);
 
