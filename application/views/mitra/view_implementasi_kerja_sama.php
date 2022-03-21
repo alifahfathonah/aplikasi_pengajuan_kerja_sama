@@ -39,6 +39,7 @@
                                         <th>Jenis Perjanjian</th>
                                         <th>Kategori Kerja Sama</th>
                                         <th>Masa Berlaku</th>
+                                        <th>Evaluasi</th>
                                         <th>File Implementasi Kerja Sama</th>
                                        
                                     </tr>
@@ -54,6 +55,7 @@
                   $keterangan = $i['keterangan'];
                   $id_jenis_perjanjian = $i['bentuk_perjanjian'];
                   $nama_kategori_kerja_sama = $i['nama_kategori_kerja_sama'];
+                  $evaluasi = $i['evaluasi'];
                   $file_implementasi_kerja_sama = $i['file_implementasi_kerja_sama'];
                   $masa_berlaku = $i['masa_berlaku'];
                  
@@ -67,6 +69,7 @@
                                         <td><?= $id_jenis_perjanjian ?></td>
                                         <td><?= $nama_kategori_kerja_sama?></td>
                                         <td><?= $masa_berlaku ?></td>
+                                        <td><?= $evaluasi ?></td>
                                         <td class="text-center">
                                             <div class="table-resposive">
                                                 <div class="table table-striped table-hover "><a type="button"
