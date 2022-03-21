@@ -540,7 +540,7 @@ if ( ! function_exists('set_status_header'))
 				429	=> 'Too Many Requests',
 				431	=> 'Request Header Fields Too Large',
 
-				500	=> 'Internal Server Error',
+				500	=> 'Nasional Server Error',
 				501	=> 'Not Implemented',
 				502	=> 'Bad Gateway',
 				503	=> 'Service Unavailable',
@@ -596,7 +596,7 @@ if ( ! function_exists('_error_handler'))
 	{
 		$is_error = (((E_ERROR | E_PARSE | E_COMPILE_ERROR | E_CORE_ERROR | E_USER_ERROR) & $severity) === $severity);
 
-		// When an error occurred, set the status header to '500 Internal Server Error'
+		// When an error occurred, set the status header to '500 Nasional Server Error'
 		// to indicate to the client something went wrong.
 		// This can't be done within the $_error->show_php_error method because
 		// it is only called when the display_errors flag is set (which isn't usually

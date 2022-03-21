@@ -91,6 +91,7 @@
                             <i class="fas fa-table me-1"></i>
                             DataImplementasi Kerja Sama
                         </div>
+
                         <div class="card-body">
                             <table id="datatablesSimple">
                                 <thead>
@@ -101,6 +102,7 @@
                                         <th>Keterangan</th>
                                         <th>Jenis Perjanjian</th>
                                         <th>Kategori Kerja Sama</th>
+                                        <th>Masa Berlaku</th>
                                         <th>File Implementasi Kerja Sama</th>
                                         <th colspan="2">Aksi</th>
                                     </tr>
@@ -120,6 +122,7 @@
                   $id_jenis_perjanjian = $i['bentuk_perjanjian'];
                   $nama_kategori_kerja_sama = $i['nama_kategori_kerja_sama'];
                   $file_implementasi_kerja_sama = $i['file_implementasi_kerja_sama'];
+                  $masa_berlaku = $i['masa_berlaku'];
                  
 
               ?>
@@ -130,6 +133,7 @@
                                         <td><?= $keterangan ?></td>
                                         <td><?= $id_jenis_perjanjian ?></td>
                                         <td><?= $nama_kategori_kerja_sama ?></td>
+                                        <td><?= $masa_berlaku ?></td>
                                         <td class="text-center">
                                             <div class="table-resposive">
                                                 <div class="table table-striped table-hover "><a type="button"
@@ -244,6 +248,23 @@
                                                      ?>
                                                                 <option value="<?= $id ?>"><?= $nama_mitra ?></option>
 
+                                                                <?php endforeach?>
+                                                            </select>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="id_masa_berlaku" class="form-label">Masa
+                                                                Berlaku</label>
+                                                            <select class="form-select"
+                                                                aria-label="Default select example"
+                                                                name="id_masa_berlaku">
+
+                                                                <?php foreach($masa_berlaku_data as $u)
+                                                    :
+                                                    $id_masa_berlaku = $u["id_masa_berlaku"];
+                                                    $nama_masa_berlaku = $u["masa_berlaku"];
+                                                     ?>
+                                                                <option value="<?= $id_masa_berlaku ?>">
+                                                                    <?= $nama_masa_berlaku ?></option>
                                                                 <?php endforeach?>
                                                             </select>
                                                         </div>
@@ -379,6 +400,22 @@
                                                      ?>
                                                     <option value="<?= $id_kategori_kerja_sama ?>">
                                                         <?= $nama_kategori_kerja_sama ?></option>
+                                                    <?php endforeach?>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="id_masa_berlaku" class="form-label">Masa
+                                                    Berlaku</label>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    name="id_masa_berlaku">
+
+                                                    <?php foreach($masa_berlaku_data as $u)
+                                                    :
+                                                    $id_masa_berlaku = $u["id_masa_berlaku"];
+                                                    $nama_masa_berlaku = $u["masa_berlaku"];
+                                                     ?>
+                                                    <option value="<?= $id_masa_berlaku ?>">
+                                                        <?= $nama_masa_berlaku ?></option>
                                                     <?php endforeach?>
                                                 </select>
                                             </div>

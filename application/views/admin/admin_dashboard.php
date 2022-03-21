@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-success text-white mb-4">
-                                <div class="card-body">Kerja Sama Eksternal</div>
+                                <div class="card-body">Kerja Sama Internasional</div>
                                 <div class="card-body">
                                     <h2><?=
                                 $total_kerja_sama_eksternal[0]['total_kerja_sama_eksternal'];
@@ -74,7 +74,7 @@
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Kerja Sama Internal</div>
+                                <div class="card-body">Kerja Sama Nasional</div>
                                 <div class="card-body">
                                     <h2><?=
                                 $total_kerja_sama_internal[0]['total_kerja_sama_internal'];

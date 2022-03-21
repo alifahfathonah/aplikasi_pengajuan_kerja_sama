@@ -260,7 +260,7 @@ class CI_Cache_file extends CI_Driver {
 	/**
 	 * Get all data
 	 *
-	 * Internal method to get all the relevant data about a cache item
+	 * Nasional method to get all the relevant data about a cache item
 	 *
 	 * @param	string	$id	Cache ID
 	 * @return	mixed	Data array on success or FALSE on failure

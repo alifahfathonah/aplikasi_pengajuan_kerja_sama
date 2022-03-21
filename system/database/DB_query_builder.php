@@ -786,7 +786,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Internal WHERE IN
+	 * Nasional WHERE IN
 	 *
 	 * @used-by	where_in()
 	 * @used-by	or_where_in()
@@ -928,7 +928,7 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Internal LIKE
+	 * Nasional LIKE
 	 *
 	 * @used-by	like()
 	 * @used-by	or_like()
@@ -1004,8 +1004,8 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	/**
 	 * Starts a query group.
 	 *
-	 * @param	string	$not	(Internal use only)
-	 * @param	string	$type	(Internal use only)
+	 * @param	string	$not	(Nasional use only)
+	 * @param	string	$type	(Nasional use only)
 	 * @return	CI_DB_query_builder
 	 */
 	public function group_start($not = '', $type = 'AND ')

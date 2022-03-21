@@ -867,7 +867,7 @@ class CI_Loader {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Internal CI Data Loader
+	 * Nasional CI Data Loader
 	 *
 	 * Used to load views and files.
 	 *
@@ -1003,7 +1003,7 @@ class CI_Loader {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Internal CI Library Loader
+	 * Nasional CI Library Loader
 	 *
 	 * @used-by	CI_Loader::library()
 	 * @uses	CI_Loader::_ci_init_library()
@@ -1097,7 +1097,7 @@ class CI_Loader {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Internal CI Stock Library Loader
+	 * Nasional CI Stock Library Loader
 	 *
 	 * @used-by	CI_Loader::_ci_load_library()
 	 * @uses	CI_Loader::_ci_init_library()
@@ -1181,7 +1181,7 @@ class CI_Loader {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Internal CI Library Instantiator
+	 * Nasional CI Library Instantiator
 	 *
 	 * @used-by	CI_Loader::_ci_load_stock_library()
 	 * @used-by	CI_Loader::_ci_load_library()

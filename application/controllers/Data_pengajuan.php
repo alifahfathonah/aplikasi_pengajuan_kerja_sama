@@ -7,7 +7,7 @@ class Data_pengajuan extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_data_pengajuan');
 		$this->load->model('m_status_pengajuan');
-		$this->load->model('m_masa_berlaku');
+		
 	}
 	public function view_admin()
 	{
@@ -16,7 +16,7 @@ class Data_pengajuan extends CI_Controller {
 			$id = $this->session->userdata('id');
 			$data['data_pengajuan'] = $this->m_data_pengajuan->get_data_pengajuan($id)->result_array();
 			$data['status_pengajuan_data'] = $this->m_status_pengajuan->get_status_pengajuan();
-			$data['masa_berlaku_data'] = $this->m_masa_berlaku->get_masa_berlaku();
+			
 
 		$this->load->view('admin/data_pengajuan', $data);
 

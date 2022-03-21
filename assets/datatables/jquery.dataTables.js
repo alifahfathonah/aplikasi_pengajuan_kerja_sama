@@ -8293,7 +8293,7 @@
 				}
 	
 				api.rows( {page:'current'} ).eq(0).each( function (idx) {
-					// Internal data grab
+					// Nasional data grab
 					var row = data[ idx ];
 	
 					if ( row._detailsShow ) {
@@ -14033,7 +14033,7 @@
 	
 	
 		/**
-		 * Internal functions, exposed for used in plug-ins.
+		 * Nasional functions, exposed for used in plug-ins.
 		 * 
 		 * Please note that you should not need to use the internal methods for
 		 * anything other than a plug-in (and even then, try to avoid if possible).

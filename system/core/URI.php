@@ -414,7 +414,7 @@ class CI_URI {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Internal URI-to-assoc
+	 * Nasional URI-to-assoc
 	 *
 	 * Generates a key/value pair from the URI string or re-routed URI string.
 	 *
@@ -540,7 +540,7 @@ class CI_URI {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Internal Slash segment
+	 * Nasional Slash segment
 	 *
 	 * Fetches an URI Segment and adds a slash to it.
 	 *

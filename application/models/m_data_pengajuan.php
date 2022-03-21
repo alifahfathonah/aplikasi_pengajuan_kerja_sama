@@ -20,7 +20,6 @@ class M_data_pengajuan extends CI_Model
         JOIN negara_asal_pengajuan ON data_pengajuan.id_negara_asal_pengajuan = negara_asal_pengajuan.id_negara_pengajuan
         JOIN status_pengajuan ON data_pengajuan.id_status_pengajuan = status_pengajuan.id_status_pengajuan
         JOIN kategori_kerja_sama ON data_pengajuan.id_kategori_kerjasama = kategori_kerja_sama.id_kategori_kerja_sama
-        JOIN masa_berlaku ON data_pengajuan.id_masa_berlaku = masa_berlaku.id_masa_berlaku
         JOIN user ON data_pengajuan.id_user_pengirim = user.id WHERE id_user_penerima='$id'");
         return $hasil;
     }
@@ -32,7 +31,6 @@ class M_data_pengajuan extends CI_Model
         JOIN negara_asal_pengajuan ON data_pengajuan.id_negara_asal_pengajuan = negara_asal_pengajuan.id_negara_pengajuan
         JOIN status_pengajuan ON data_pengajuan.id_status_pengajuan = status_pengajuan.id_status_pengajuan
         JOIN kategori_kerja_sama ON data_pengajuan.id_kategori_kerjasama = kategori_kerja_sama.id_kategori_kerja_sama
-        JOIN masa_berlaku ON data_pengajuan.id_masa_berlaku = masa_berlaku.id_masa_berlaku
         JOIN user ON data_pengajuan.id_user_penerima = user.id WHERE id_user_pengirim='$id'");
         return $hasil;
     }

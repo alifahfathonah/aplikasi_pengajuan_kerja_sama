@@ -100,8 +100,8 @@ CREATE TABLE `jenis_pengajuan` (
 --
 
 INSERT INTO `jenis_pengajuan` (`id_jenis_pengajuan`, `jenis_pengajuan`) VALUES
-(1, 'Internal'),
-(2, 'Eksternal');
+(1, 'Nasional'),
+(2, 'Internasional');
 
 -- --------------------------------------------------------
 

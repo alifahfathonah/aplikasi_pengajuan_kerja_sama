@@ -224,7 +224,7 @@ class CI_FTP {
 	 * this function can be used to test for the existence of a folder
 	 * without throwing an error. There's no FTP equivalent to is_dir()
 	 * so we do it by trying to change to a particular directory.
-	 * Internally, this parameter is only used by the "mirror" function below.
+	 * Nasionally, this parameter is only used by the "mirror" function below.
 	 *
 	 * @param	string	$path
 	 * @param	bool	$suppress_debug

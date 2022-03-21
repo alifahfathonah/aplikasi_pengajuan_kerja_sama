@@ -9,6 +9,7 @@ class Implementasi_kerja_sama extends CI_Controller {
 		$this->load->model('m_kategori_kerja_sama');
 		$this->load->model('m_bentuk_perjanjian');
 		$this->load->model('m_user');
+		$this->load->model('m_masa_berlaku');
 		
 	}
 
@@ -19,6 +20,7 @@ class Implementasi_kerja_sama extends CI_Controller {
 			$data['implementasi_kerja_sama'] = $this->m_implementasi_kerja_sama->get_implementasi_kerja_sama();
 			$data['kategori_kerja_sama'] = $this->m_kategori_kerja_sama->get_kategori_kerja_sama();
 			$data['bentuk_perjanjian_pilih'] = $this->m_bentuk_perjanjian->get_bentuk_perjanjian();
+			$data['masa_berlaku_data'] = $this->m_masa_berlaku->get_masa_berlaku();
 			$data['user'] = $this->m_user->get_user();
 
 		$this->load->view('admin/view_implementasi_kerja_sama', $data);

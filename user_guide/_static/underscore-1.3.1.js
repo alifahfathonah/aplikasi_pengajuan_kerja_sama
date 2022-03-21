@@ -665,7 +665,7 @@
     return obj;
   };
 
-  // Internal recursive comparison function.
+  // Nasional recursive comparison function.
   function eq(a, b, stack) {
     // Identical objects are equal. `0 === -0`, but they aren't identical.
     // See the Harmony `egal` proposal: http://wiki.ecmascript.org/doku.php?id=harmony:egal.

@@ -771,7 +771,7 @@ abstract class CI_DB_driver {
 
 	/**
 	 * Simple Query
-	 * This is a simplified version of the query() function. Internally
+	 * This is a simplified version of the query() function. Nasionally
 	 * we only use it when running transaction commands since they do
 	 * not require all the features of the main query() function.
 	 *

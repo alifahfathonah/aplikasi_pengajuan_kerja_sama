@@ -16,17 +16,17 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Table Kerja Sama Eksternal</h1>
+                    <h1 class="mt-4">Table Kerja Sama Internasional</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="<?= base_url();?>Dashboard/dashboard_mitra">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Kerja Sama Eksternal</li>
+                        <li class="breadcrumb-item active">Kerja Sama Internasional</li>
                     </ol>
                     
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Kerja Sama Eksternal
+                            Data Kerja Sama Internasional
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -39,7 +39,7 @@
                                         <th>Pengusul</th>
                                         <th>Status Kerja Sama </th>
                                         <th>Kategori Kerja Sama</th>
-                                        <th>File Kerja Sama Internal</th>
+                                        <th>File Kerja Sama Nasional</th>
 
                                     </tr>
                                 </thead>

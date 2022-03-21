@@ -74,11 +74,11 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Table Kerja Sama Internal</h1>
+                    <h1 class="mt-4">Table Kerja Sama Nasional</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="<?= base_url();?>Dashboard/dashboard_admin">Dashboard</a>
                         </li>
-                        <li class="breadcrumb-item active">Kerja Sama Internal</li>
+                        <li class="breadcrumb-item active">Kerja Sama Nasional</li>
                     </ol>
                     <ol>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -89,7 +89,7 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Data Kerja Sama Internal
+                            Data Kerja Sama Nasional
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -102,7 +102,7 @@
                                         <th>Pengusul</th>
                                         <th>Status Kerja Sama </th>
                                         <th>Kategori Kerja Sama</th>
-                                        <th>File Kerja Sama Internal</th>
+                                        <th>File Kerja Sama Nasional</th>
                                         <th colspan="2">Aksi</th>
                                     </tr>
                                 </thead>
@@ -162,14 +162,14 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <!-- Modal Edit Kerja Sama Internal -->
+                                    <!-- Modal Edit Kerja Sama Nasional -->
                                     <div class="modal fade" id="hapus<?= $id_kerja_sama_internal ?>" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Hapus Data Kerja
-                                                        Sama Internal
+                                                        Sama Nasional
                                                     </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -202,14 +202,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Modal Edit Kerja Sama Internal -->
+                                    <!-- Modal Edit Kerja Sama Nasional -->
                                     <div class="modal fade" id="edit_kerja_sama_internal<?= $id_kerja_sama_internal ?>"
                                         tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kerja
-                                                        Sama Internal
+                                                        Sama Nasional
                                                     </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -302,7 +302,7 @@
                                                         <div class="mb-3">
                                                             <label for="file_kerja_sama_internal"
                                                                 class="form-label">File Kerja Sama
-                                                                Internal</label>
+                                                                Nasional</label>
 
                                                             <input type="file" class="form-control"
                                                                 id="file_kerja_sama_internal"
@@ -318,13 +318,13 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- Modal Tambah Data Kerja Sama Internal -->
+                        <!-- Modal Tambah Data Kerja Sama Nasional -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kerja Sama Internal
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kerja Sama Nasional
                                         </h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
@@ -400,7 +400,7 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="file_kerja_sama_internal" class="form-label">File Kerja Sama
-                                                    Internal</label>
+                                                    Nasional</label>
                                                 <input type="file" class="form-control" id="file_kerja_sama_internal"
                                                     name="file_kerja_sama_internal">
                                             </div>

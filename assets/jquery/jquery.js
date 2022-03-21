@@ -2598,7 +2598,7 @@ function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 		superMatcher;
 }
 
-compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
+compile = Sizzle.compile = function( selector, match /* Nasional Use Only */ ) {
 	var i,
 		setMatchers = [],
 		elementMatchers = [],
@@ -3831,7 +3831,7 @@ jQuery.extend( {
 
 // These usually indicate a programmer mistake during development,
 // warn about them ASAP rather than swallowing them by default.
-var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
+var rerrorNames = /^(Eval|Nasional|Range|Reference|Syntax|Type|URI)Error$/;
 
 jQuery.Deferred.exceptionHook = function( error, stack ) {
 

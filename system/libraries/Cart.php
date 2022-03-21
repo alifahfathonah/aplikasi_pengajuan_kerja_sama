@@ -242,7 +242,7 @@ class CI_Cart {
 		// For example, what if someone buys two identical t-shirts (same product ID), but in
 		// different sizes?  The product ID (and other attributes, like the name) will be identical for
 		// both sizes because it's the same shirt. The only difference will be the size.
-		// Internally, we need to treat identical submissions, but with different options, as a unique product.
+		// Nasionally, we need to treat identical submissions, but with different options, as a unique product.
 		// Our solution is to convert the options array to a string and MD5 it along with the product ID.
 		// This becomes the unique "row ID"
 		if (isset($items['options']) && count($items['options']) > 0)

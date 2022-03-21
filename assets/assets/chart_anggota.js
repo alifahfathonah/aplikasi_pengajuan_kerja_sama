@@ -19,7 +19,7 @@ $(document).ready(function() {
             var myLineChart = new Chart(ctx, {
                 type: 'pie',
                 data: {
-                    labels: ["Kerja Sama Eksternal", "Kerja Sama Internal", "Implementasi Kerja Sama", "Data Pengajuan"],
+                    labels: ["Kerja Sama Internasional", "Kerja Sama Nasional", "Implementasi Kerja Sama", "Data Pengajuan"],
                     datasets: [{
                         label: "Jumlah",
                         lineTension: 0.3,
@@ -101,7 +101,7 @@ $(document).ready(function() {
             var myLineChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ["Kerja Sama Eksternal", "Kerja Sama Internal", "Implementasi Kerja Sama", "Data Pengajuan"],
+                    labels: ["Kerja Sama Internasional", "Kerja Sama Nasional", "Implementasi Kerja Sama", "Data Pengajuan"],
                     datasets: [{
                         label: "Jumlah",
                         backgroundColor: "rgba(2,117,216,1)",

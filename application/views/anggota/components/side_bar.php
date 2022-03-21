@@ -8,11 +8,11 @@
             </a>
             <a class="nav-link" href="<?= base_url();?>Kerja_sama_eksternal/view_anggota">
                 <div class="sb-nav-link-icon"><i class="fas fa-archive"></i></div>
-                Kerja Sama Eksternal
+                Kerja Sama Internasional
             </a>
             <a class="nav-link" href="<?= base_url();?>Kerja_sama_internal/view_anggota">
                 <div class="sb-nav-link-icon"><i class="fas fa-archive"></i></div>
-                Kerja Sama Internal
+                Kerja Sama Nasional
             </a>
             <a class="nav-link" href="<?= base_url();?>Implementasi_kerja_sama/view_anggota">
                 <div class="sb-nav-link-icon"><i class="fas fa-archive"></i></div>
@@ -26,7 +26,7 @@
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
                 aria-expanded="false" aria-controls="collapseLayouts">
                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                Kerja Sama Eksternal
+                Kerja Sama Internasional
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -39,7 +39,7 @@
             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#filter_data"
                 aria-expanded="false" aria-controls="filter_data">
                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                Kerja Sama Internal
+                Kerja Sama Nasional
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
             <div class="collapse" id="filter_data" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">

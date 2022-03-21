@@ -167,7 +167,7 @@ class CI_Input {
 	/**
 	 * Fetch from array
 	 *
-	 * Internal method used to retrieve values from global arrays.
+	 * Nasional method used to retrieve values from global arrays.
 	 *
 	 * @param	array	&$array		$_GET, $_POST, $_COOKIE, $_SERVER, etc.
 	 * @param	mixed	$index		Index for item to be fetched from $array
@@ -589,7 +589,7 @@ class CI_Input {
 	/**
 	 * Sanitize Globals
 	 *
-	 * Internal method serving for the following purposes:
+	 * Nasional method serving for the following purposes:
 	 *
 	 *	- Unsets $_GET data, if query strings are not enabled
 	 *	- Cleans POST, COOKIE and SERVER data
@@ -659,7 +659,7 @@ class CI_Input {
 	/**
 	 * Clean Input Data
 	 *
-	 * Internal method that aids in escaping data and
+	 * Nasional method that aids in escaping data and
 	 * standardizing newline characters to PHP_EOL.
 	 *
 	 * @param	string|string[]	$str	Input string(s)
@@ -710,7 +710,7 @@ class CI_Input {
 	/**
 	 * Clean Keys
 	 *
-	 * Internal method that helps to prevent malicious users
+	 * Nasional method that helps to prevent malicious users
 	 * from trying to exploit keys we make sure that keys are
 	 * only named with alpha-numeric text and a few other items.
 	 *

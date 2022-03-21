@@ -132,7 +132,7 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 	/**
 	 * Cookie destroy
 	 *
-	 * Internal method to force removal of a cookie by the client
+	 * Nasional method to force removal of a cookie by the client
 	 * when session_destroy() is called.
 	 *
 	 * @return	bool
