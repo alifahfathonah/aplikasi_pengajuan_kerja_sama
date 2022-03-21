@@ -1,10 +1,10 @@
 <?php
 class M_implementasi_kerja_sama extends CI_Model
 {
-    public function tambah_implementasi_kerja_sama($masa_berlaku, $id_lembaga_mitra,  $keterangan, $id_bentuk_perjanjian, $file_implementasi_kerja_sama, $id_kategori_kerja_sama,  $id_masa_berlaku){
+    public function tambah_implementasi_kerja_sama($masa_berakhir, $id_lembaga_mitra,  $keterangan, $id_bentuk_perjanjian, $file_implementasi_kerja_sama, $id_kategori_kerja_sama,  $id_masa_berlaku, $id_evaluasi){
         $this->db->trans_start();
-        $this->db->query("INSERT INTO implementasi_kerja_sama(masa_berlaku, id_lembaga_mitra, keterangan, id_bentuk_perjanjian, file_implementasi_kerja_sama, id_kategori_kerja_sama, id_masa_berlaku) 
-        VALUES ('$masa_berlaku', '$id_lembaga_mitra','$keterangan','$id_bentuk_perjanjian','$file_implementasi_kerja_sama','$id_kategori_kerja_sama' ,' $id_masa_berlaku')");
+        $this->db->query("INSERT INTO implementasi_kerja_sama(masa_berakhir, id_lembaga_mitra, keterangan, id_bentuk_perjanjian, file_implementasi_kerja_sama, id_kategori_kerja_sama, id_masa_berlaku, id_evaluasi) 
+        VALUES ('$masa_berakhir', '$id_lembaga_mitra','$keterangan','$id_bentuk_perjanjian','$file_implementasi_kerja_sama','$id_kategori_kerja_sama' ,' $id_masa_berlaku',' $id_evaluasi')");
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
             return true;
@@ -54,8 +54,8 @@ class M_implementasi_kerja_sama extends CI_Model
          return $hsl;
     }
 
-    function update_implementasi_kerja_sama($masa_berlaku, $id_lembaga_mitra,  $keterangan, $id_bentuk_perjanjian, $file_implementasi_kerja_sama, $id_kategori_kerja_sama, $id_masa_berlaku, $id_implementasi_kerja_sama){
-        $hsl = $this->db->query("UPDATE implementasi_kerja_sama SET masa_berlaku='$masa_berlaku',  id_lembaga_mitra='$id_lembaga_mitra',  keterangan='$keterangan',  id_bentuk_perjanjian='$id_bentuk_perjanjian',  file_implementasi_kerja_sama='$file_implementasi_kerja_sama',  id_kategori_kerja_sama='$id_kategori_kerja_sama',  id_masa_berlaku='$id_masa_berlaku'  WHERE id_implementasi_kerja_sama='$id_implementasi_kerja_sama'");
+    function update_implementasi_kerja_sama($masa_berakhir, $id_lembaga_mitra,  $keterangan, $id_bentuk_perjanjian, $file_implementasi_kerja_sama, $id_kategori_kerja_sama, $id_masa_berlaku, $id_evaluasi, $id_implementasi_kerja_sama){
+        $hsl = $this->db->query("UPDATE implementasi_kerja_sama SET masa_berakhir='$masa_berakhir',  id_lembaga_mitra='$id_lembaga_mitra',  keterangan='$keterangan',  id_bentuk_perjanjian='$id_bentuk_perjanjian',  file_implementasi_kerja_sama='$file_implementasi_kerja_sama',  id_kategori_kerja_sama='$id_kategori_kerja_sama',  id_masa_berlaku='$id_masa_berlaku',  id_evaluasi='$id_evaluasi'  WHERE id_implementasi_kerja_sama='$id_implementasi_kerja_sama'");
          return $hsl;
      }
 

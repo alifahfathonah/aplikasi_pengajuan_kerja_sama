@@ -314,6 +314,22 @@
                                                             </select>
                                                         </div>
                                                         <div class="mb-3">
+                                                            <label for="id_evaluasi" class="form-label">Masa
+                                                                Berlaku</label>
+                                                            <select class="form-select"
+                                                                aria-label="Default select example" name="id_evaluasi">
+
+                                                                <?php foreach($evaluasi_data as $u)
+                                                    :
+                                                    $id_evaluasi = $u["id_evaluasi"];
+                                                    $nama_evaluasi = $u["evaluasi"];
+                                                     ?>
+                                                                <option value="<?= $id_evaluasi ?>">
+                                                                    <?= $nama_evaluasi ?></option>
+                                                                <?php endforeach?>
+                                                            </select>
+                                                        </div>
+                                                        <div class="mb-3">
                                                             <label for="file_implementasi_kerja_sama"
                                                                 class="form-label">File Implementasi Kerja Sama</label>
                                                             <input type="text" class="form-control"
@@ -419,6 +435,22 @@
                                                      ?>
                                                     <option value="<?= $id_masa_berlaku ?>">
                                                         <?= $nama_masa_berlaku ?></option>
+                                                    <?php endforeach?>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="id_evaluasi" class="form-label">Masa
+                                                    Berlaku</label>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    name="id_evaluasi">
+
+                                                    <?php foreach($evaluasi_data as $u)
+                                                    :
+                                                    $id_evaluasi = $u["id_evaluasi"];
+                                                    $nama_evaluasi = $u["evaluasi"];
+                                                     ?>
+                                                    <option value="<?= $id_evaluasi ?>">
+                                                        <?= $nama_evaluasi ?></option>
                                                     <?php endforeach?>
                                                 </select>
                                             </div>
