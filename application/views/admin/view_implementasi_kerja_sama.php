@@ -97,7 +97,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Masa Berlaku</th>
+                                        <th>Tanggal Dimulai Kerja Sama</th>
+                                        <th>Tanggal Berakhir Kerja Sama</th>
                                         <th>Lembaga Mitra</th>
                                         <th>Keterangan</th>
                                         <th>Jenis Perjanjian</th>
@@ -117,7 +118,8 @@
                   :
                   $id++;
                   $id_implementasi_kerja_sama = $i['id_implementasi_kerja_sama'];
-                  $masa_berlaku = $i['masa_berlaku'];
+                  $tanggal_dimulai = $i['tanggal_dimulai'];
+                  $tanggal_berakhir = $i['tanggal_berakhir'];
                   $nama_mitra = $i['nama_mitra'];
                   $keterangan = $i['keterangan'];
                   $id_jenis_perjanjian = $i['bentuk_perjanjian'];
@@ -130,7 +132,8 @@
               ?>
                                     <tr>
                                         <td><?= $id ?></td>
-                                        <td><?= $masa_berlaku ?></td>
+                                        <td><?= $tanggal_dimulai ?></td>
+                                        <td><?= $tanggal_berakhir ?></td>
                                         <td><?= $nama_mitra ?></td>
                                         <td><?= $keterangan ?></td>
                                         <td><?= $id_jenis_perjanjian ?></td>
@@ -230,11 +233,19 @@
                                                         <input type="hidden" name="id_implementasi_kerja_sama"
                                                             value="<?php echo $id_implementasi_kerja_sama?>" />
                                                         <div class="mb-3">
-                                                            <label for="masa_berlaku" class="form-label">Masa
-                                                                Berlaku</label>
-                                                            <input type="date" class="form-control" id="masa_berlaku"
-                                                                aria-describedby="masa_berlaku" name="masa_berlaku"
-                                                                value="<?=$masa_berlaku?>">
+                                                            <label for="tanggal_dimulai" class="form-label">Tanggal
+                                                                Dimulai Kerja Sama</label>
+                                                            <input type="date" class="form-control" id="tanggal_dimulai"
+                                                                aria-describedby="tanggal_dimulai"
+                                                                name="tanggal_dimulai" value="<?=$tanggal_dimulai?>">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="tanggal_berakhir" class="form-label">Tanggal
+                                                                Berakhir Kerja Sama</label>
+                                                            <input type="date" class="form-control"
+                                                                id="tanggal_berakhir"
+                                                                aria-describedby="tanggal_berakhir"
+                                                                name="tanggal_berakhir" value="<?=$tanggal_dimulai?>">
                                                         </div>
                                                         <input type="text" name="id_implementasi_kerja_sama"
                                                             value="<?=$id_implementasi_kerja_sama?>" hidden>
@@ -367,9 +378,16 @@
                                         <form action="<?= base_url(); ?>Implementasi_kerja_sama/input_data_admin"
                                             enctype="multipart/form-data" method="POST">
                                             <div class="mb-3">
-                                                <label for="masa_berlaku" class="form-label">Masa Berlaku</label>
-                                                <input type="date" class="form-control" id="masa_berlaku"
-                                                    aria-describedby="masa_berlaku" name="masa_berlaku">
+                                                <label for="tanggal_dimulai" class="form-label">Tanggal Dimulai Kerja
+                                                    Sama</label>
+                                                <input type="date" class="form-control" id="tanggal_dimulai"
+                                                    aria-describedby="tanggal_dimulai" name="tanggal_dimulai">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="tanggal_berakhir" class="form-label">Tanggal Berakhir Kerja
+                                                    Sama</label>
+                                                <input type="date" class="form-control" id="tanggal_berakhir"
+                                                    aria-describedby="tanggal_berakhir" name="tanggal_berakhir">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="id_lembaga_mitra" class="form-label">Lembaga Mitra</label>
