@@ -33,7 +33,8 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Masa Berakhir</th>
+                                        <th>Tanggal Dimulai Kerja Sama</th>
+                                        <th>Tanggal Berakhir Kerja Sama</th>
                                         <th>Lembaga Mitra</th>
                                         <th>Keterangan</th>
                                         <th>Jenis Perjanjian</th>
@@ -50,7 +51,8 @@
                   foreach($implementasi_kerja_sama->result_array() as $i)
                   :
                   $no++;
-                  $masa_berakhir = $i['masa_berakhir'];
+                  $tanggal_dimulai = $i['tanggal_dimulai'];
+                  $tanggal_berakhir = $i['tanggal_berakhir'];
                   $nama_mitra = $i['nama_mitra'];
                   $keterangan = $i['keterangan'];
                   $id_jenis_perjanjian = $i['bentuk_perjanjian'];
@@ -63,7 +65,8 @@
               ?>
                                     <tr>
                                         <td><?= $no ?></td>
-                                        <td><?= $masa_berakhir ?></td>
+                                        <td><?= $tanggal_dimulai ?></td>
+                                        <td><?= $tanggal_berakhir ?></td>
                                         <td><?= $nama_mitra ?></td>
                                         <td><?= $keterangan ?></td>
                                         <td><?= $id_jenis_perjanjian ?></td>
