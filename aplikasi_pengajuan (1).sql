@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2022 at 05:34 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- Generation Time: Mar 23, 2022 at 01:59 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,6 +60,36 @@ CREATE TABLE `data_pengajuan` (
   `id_user_penerima` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `data_pengajuan`
+--
+
+INSERT INTO `data_pengajuan` (`id_data_pengajuan`, `no_pengajuan`, `keterangan`, `id_bentuk_perjanjian`, `id_jenis_pengajuan`, `file_data_pengajuan`, `id_negara_asal_pengajuan`, `id_status_pengajuan`, `id_kategori_kerjasama`, `id_user_pengirim`, `id_user_penerima`) VALUES
+(5, '127812', 'Bagus', 1, 1, '5505741d3820aff8e4dda623519af069.pdf', 1, 4, 3, 4, 3),
+(6, '162712', 'Bagus', 2, 2, 'f9f6b6c3f8aabc51944fcf30c785a7d9.pdf', 1, 2, 2, 4, 3),
+(8, '72187182', 'Bagus', 1, 1, '4e3f0d23f1be9c80377f6773881be78c.pdf', 1, 1, 1, 3, 5),
+(9, '781718271', 'Bagus', 1, 1, '2d6f05069db9e62c6e6e4936a0e847cf.pdf', 1, 2, 1, 4, 3),
+(10, '1827187281', 'bagus', 1, 1, '84f40ca1642fa1070001eda2077b07c7.pdf', 1, 1, 1, 3, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `evaluasi`
+--
+
+CREATE TABLE `evaluasi` (
+  `id_evaluasi` int(11) NOT NULL,
+  `evaluasi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `evaluasi`
+--
+
+INSERT INTO `evaluasi` (`id_evaluasi`, `evaluasi`) VALUES
+(1, 'Perpanjang'),
+(2, 'Tidak Perpanjang');
+
 -- --------------------------------------------------------
 
 --
@@ -68,21 +98,24 @@ CREATE TABLE `data_pengajuan` (
 
 CREATE TABLE `implementasi_kerja_sama` (
   `id_implementasi_kerja_sama` int(11) NOT NULL,
-  `masa_berlaku` date NOT NULL,
+  `tanggal_dimulai` date DEFAULT NULL,
+  `tanggal_berakhir` date NOT NULL,
   `id_lembaga_mitra` int(100) NOT NULL,
   `keterangan` varchar(250) NOT NULL,
   `id_bentuk_perjanjian` int(11) NOT NULL,
   `file_implementasi_kerja_sama` varchar(250) NOT NULL,
-  `id_kategori_kerja_sama` int(11) NOT NULL
+  `id_kategori_kerja_sama` int(11) NOT NULL,
+  `id_masa_berlaku` int(11) NOT NULL,
+  `id_evaluasi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `implementasi_kerja_sama`
 --
 
-INSERT INTO `implementasi_kerja_sama` (`id_implementasi_kerja_sama`, `masa_berlaku`, `id_lembaga_mitra`, `keterangan`, `id_bentuk_perjanjian`, `file_implementasi_kerja_sama`, `id_kategori_kerja_sama`) VALUES
-(1, '2022-02-16', 4, 'Bagus', 1, 'h.pdf', 1),
-(2, '2022-02-16', 3, 'Bagus', 3, 'CV.pdf', 1);
+INSERT INTO `implementasi_kerja_sama` (`id_implementasi_kerja_sama`, `tanggal_dimulai`, `tanggal_berakhir`, `id_lembaga_mitra`, `keterangan`, `id_bentuk_perjanjian`, `file_implementasi_kerja_sama`, `id_kategori_kerja_sama`, `id_masa_berlaku`, `id_evaluasi`) VALUES
+(3, '2022-01-23', '2022-03-02', 4, 'Bagus', 1, '5462929db201a15aaf6d2d3400b667731.pdf', 1, 1, 1),
+(4, '2022-03-01', '2022-03-23', 5, 'bagus', 1, '2841c0e2bd3a8a09d016cfa90c4e88611.pdf', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -145,7 +178,10 @@ CREATE TABLE `kerja_sama_eksternal` (
 --
 
 INSERT INTO `kerja_sama_eksternal` (`id_kerja_sama_eksternal`, `no_usulan`, `keterangan`, `id_lembaga_mitra`, `id_pengusul`, `id_status_kerja_sama`, `file_kerja_sama_eksternal`, `id_kategori_kerja_sama`) VALUES
-(17, '192182', 'Bagus', '3', 4, 2, '0b959fb78f0fb7ec3a31d6bf13db00e8.pdf', 1);
+(17, '192182', 'Bagus', '3', 4, 2, '0b959fb78f0fb7ec3a31d6bf13db00e8.pdf', 1),
+(18, '128178', 'Bagus', '3', 3, 1, 'e825ceea3b59c56d0fcaddb62cc139e91.pdf', 3),
+(19, '172817', 'Bagus', '3', 3, 1, 'a29ef4510b284567b939e2cb137f0f23.pdf', 1),
+(20, '123', 'Bagus', '3', 5, 1, '4cdc245acfc28747b389cf14b02a0b61.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -169,7 +205,28 @@ CREATE TABLE `kerja_sama_internal` (
 --
 
 INSERT INTO `kerja_sama_internal` (`id_kerja_sama_internal`, `no_usulan`, `keterangan`, `id_lembaga_mitra`, `id_pengusul`, `id_status_kerja_sama`, `file_kerja_sama_internal`, `id_kategori_kerja_sama`) VALUES
-(6, '1982881', 'Bagus', 3, 3, 2, '5ab9b5c20555bd80c05e15275514aec8.pdf', 1);
+(6, '1982881', 'Bagus', 3, 3, 2, '5ab9b5c20555bd80c05e15275514aec8.pdf', 1),
+(7, '12781728', 'Bagus', 3, 3, 1, 'aa6da11ea8a67431b36eacf529a32707.pdf', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `masa_berlaku`
+--
+
+CREATE TABLE `masa_berlaku` (
+  `id_masa_berlaku` int(11) NOT NULL,
+  `masa_berlaku` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `masa_berlaku`
+--
+
+INSERT INTO `masa_berlaku` (`id_masa_berlaku`, `masa_berlaku`) VALUES
+(1, 'Belum Diverifikasi'),
+(2, 'Sedang Berlangsung'),
+(3, 'Telah Berakhir');
 
 -- --------------------------------------------------------
 
@@ -188,7 +245,9 @@ CREATE TABLE `negara_asal_pengajuan` (
 
 INSERT INTO `negara_asal_pengajuan` (`id_negara_pengajuan`, `negara_pengajuan`) VALUES
 (1, 'Indonesia'),
-(2, 'Malaysia');
+(2, 'Malaysia'),
+(3, 'Singapura'),
+(4, 'Thailand');
 
 -- --------------------------------------------------------
 
@@ -206,8 +265,8 @@ CREATE TABLE `status_kerja_sama` (
 --
 
 INSERT INTO `status_kerja_sama` (`id_status_kerja_sama`, `status_kerja_sama`) VALUES
-(1, 'Aktif'),
-(2, 'Tidak Aktif'),
+(1, 'Sedang Berlangsung'),
+(2, 'Sudah Berakhir'),
 (3, 'Akan Berakhir');
 
 -- --------------------------------------------------------
@@ -226,8 +285,12 @@ CREATE TABLE `status_pengajuan` (
 --
 
 INSERT INTO `status_pengajuan` (`id_status_pengajuan`, `status_pengajuan`) VALUES
-(1, 'Diterima'),
-(2, 'Tidak Diterima');
+(1, 'Diterima Oleh Admin'),
+(2, 'Belum Dibaca Oleh Admin'),
+(4, 'Diterima Kepala Biro'),
+(5, 'Diterima Wakil Rektor'),
+(6, 'Disetujui Rektor'),
+(7, 'Tidak Diterima(Revisi)');
 
 -- --------------------------------------------------------
 
@@ -252,7 +315,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `nama_mitra`, `no_hp`, `alamat_mitra`, `id_user_level`) VALUES
 (3, 'admin', 'admin', 'taufiiqulhakim23@gmail.com', 'UIGM', '0812781728', '', 1),
-(4, 'mitra', 'mitra', 'wahyu@gmail.com', 'Universitas Bina Darma', '0816271627', '', 2);
+(4, 'mitra', 'mitra', 'wahyu@gmail.com', 'Universitas Bina Darma', '0816271627', '', 2),
+(5, 'mitra unsri', '123', 'mitra_unsri@gmail.com', 'Universitas Sriwijaya', '0821762716266', '', 2);
 
 -- --------------------------------------------------------
 
@@ -280,6 +344,12 @@ ALTER TABLE `bentuk_perjanjian`
 --
 ALTER TABLE `data_pengajuan`
   ADD PRIMARY KEY (`id_data_pengajuan`);
+
+--
+-- Indexes for table `evaluasi`
+--
+ALTER TABLE `evaluasi`
+  ADD PRIMARY KEY (`id_evaluasi`);
 
 --
 -- Indexes for table `implementasi_kerja_sama`
@@ -310,6 +380,12 @@ ALTER TABLE `kerja_sama_eksternal`
 --
 ALTER TABLE `kerja_sama_internal`
   ADD PRIMARY KEY (`id_kerja_sama_internal`);
+
+--
+-- Indexes for table `masa_berlaku`
+--
+ALTER TABLE `masa_berlaku`
+  ADD PRIMARY KEY (`id_masa_berlaku`);
 
 --
 -- Indexes for table `negara_asal_pengajuan`
@@ -349,67 +425,79 @@ ALTER TABLE `user_level`
 -- AUTO_INCREMENT for table `bentuk_perjanjian`
 --
 ALTER TABLE `bentuk_perjanjian`
-  MODIFY `id_bentuk_perjanjian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_bentuk_perjanjian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `data_pengajuan`
 --
 ALTER TABLE `data_pengajuan`
-  MODIFY `id_data_pengajuan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_data_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `evaluasi`
+--
+ALTER TABLE `evaluasi`
+  MODIFY `id_evaluasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `implementasi_kerja_sama`
 --
 ALTER TABLE `implementasi_kerja_sama`
-  MODIFY `id_implementasi_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_implementasi_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `jenis_pengajuan`
 --
 ALTER TABLE `jenis_pengajuan`
-  MODIFY `id_jenis_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jenis_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kategori_kerja_sama`
 --
 ALTER TABLE `kategori_kerja_sama`
-  MODIFY `id_kategori_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kategori_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kerja_sama_eksternal`
 --
 ALTER TABLE `kerja_sama_eksternal`
-  MODIFY `id_kerja_sama_eksternal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_kerja_sama_eksternal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `kerja_sama_internal`
 --
 ALTER TABLE `kerja_sama_internal`
-  MODIFY `id_kerja_sama_internal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kerja_sama_internal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `masa_berlaku`
+--
+ALTER TABLE `masa_berlaku`
+  MODIFY `id_masa_berlaku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `negara_asal_pengajuan`
 --
 ALTER TABLE `negara_asal_pengajuan`
-  MODIFY `id_negara_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_negara_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `status_kerja_sama`
 --
 ALTER TABLE `status_kerja_sama`
-  MODIFY `id_status_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_status_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `status_pengajuan`
 --
 ALTER TABLE `status_pengajuan`
-  MODIFY `id_status_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_status_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user_level`

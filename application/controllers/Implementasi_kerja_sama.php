@@ -56,7 +56,8 @@ class Implementasi_kerja_sama extends CI_Controller {
 
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-		$masa_berlaku = $this->input->post("masa_berlaku");
+		$tanggal_dimulai = $this->input->post("tanggal_dimulai");
+		$tanggal_berakhir = $this->input->post("tanggal_berakhir");
 		$id_lembaga_mitra = $this->input->post("id_lembaga_mitra");
 		$keterangan = $this->input->post("keterangan");
 		$id_bentuk_perjanjian = $this->input->post("id_bentuk_perjanjian");
@@ -94,7 +95,7 @@ class Implementasi_kerja_sama extends CI_Controller {
 				redirect('implementasi_kerja_sama/view_admin');
 			}
 		
-			$hasil = $this->m_implementasi_kerja_sama->tambah_implementasi_kerja_sama($masa_berlaku, $id_lembaga_mitra,  $keterangan, $id_bentuk_perjanjian , $file_implementasi_kerja_sama['file_name'], $id_kategori_kerja_sama, $id_masa_berlaku, $id_evaluasi);
+			$hasil = $this->m_implementasi_kerja_sama->tambah_implementasi_kerja_sama($tanggal_dimulai, $tanggal_berakhir, $id_lembaga_mitra,  $keterangan, $id_bentuk_perjanjian , $file_implementasi_kerja_sama['file_name'], $id_kategori_kerja_sama, $id_masa_berlaku, $id_evaluasi);
 	
 			if($hasil==false){
 				$this->session->set_flashdata('eror','eror');
@@ -116,7 +117,8 @@ class Implementasi_kerja_sama extends CI_Controller {
 	public function edit_data_admin(){
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 			$id_implementasi_kerja_sama = $this->input->post("id_implementasi_kerja_sama");
-			$masa_berlaku = $this->input->post("masa_berlaku");
+			$tanggal_dimulai = $this->input->post("tanggal_dimulai");
+			$tanggal_berakhir = $this->input->post("tanggal_berakhir");
 			$id_lembaga_mitra = $this->input->post("id_lembaga_mitra");
 			$keterangan = $this->input->post("keterangan");
 			$id_bentuk_perjanjian = $this->input->post("id_bentuk_perjanjian");
@@ -160,7 +162,7 @@ class Implementasi_kerja_sama extends CI_Controller {
 				redirect('implementasi_kerja_sama/view_admin');
 			}
 		
-			$hasil = $this->m_implementasi_kerja_sama->update_implementasi_kerja_sama($masa_berlaku, $id_lembaga_mitra,  $keterangan, $id_bentuk_perjanjian , $file_implementasi_kerja_sama['file_name'], $id_kategori_kerja_sama, $id_masa_berlaku, $id_evaluasi, $id_implementasi_kerja_sama );
+			$hasil = $this->m_implementasi_kerja_sama->update_implementasi_kerja_sama($tanggal_dimulai, $tanggal_berakhir, $id_lembaga_mitra,  $keterangan, $id_bentuk_perjanjian , $file_implementasi_kerja_sama['file_name'], $id_kategori_kerja_sama, $id_masa_berlaku, $id_evaluasi, $id_implementasi_kerja_sama );
 	
 			if($hasil==false){
 				$this->session->set_flashdata('eror_edit','eror_edit');
