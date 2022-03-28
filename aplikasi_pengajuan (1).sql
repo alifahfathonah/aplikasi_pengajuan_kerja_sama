@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2022 at 01:59 AM
+-- Generation Time: Mar 27, 2022 at 01:53 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -114,8 +114,9 @@ CREATE TABLE `implementasi_kerja_sama` (
 --
 
 INSERT INTO `implementasi_kerja_sama` (`id_implementasi_kerja_sama`, `tanggal_dimulai`, `tanggal_berakhir`, `id_lembaga_mitra`, `keterangan`, `id_bentuk_perjanjian`, `file_implementasi_kerja_sama`, `id_kategori_kerja_sama`, `id_masa_berlaku`, `id_evaluasi`) VALUES
-(3, '2022-01-23', '2022-03-02', 4, 'Bagus', 1, '5462929db201a15aaf6d2d3400b667731.pdf', 1, 1, 1),
-(4, '2022-03-01', '2022-03-23', 5, 'bagus', 1, '2841c0e2bd3a8a09d016cfa90c4e88611.pdf', 1, 1, 1);
+(3, '2022-01-04', '2022-01-23', 3, 'Bagus', 1, '5462929db201a15aaf6d2d3400b66773.pdf', 1, 1, 1),
+(4, '2022-03-01', '2022-03-23', 5, 'bagus', 1, '2841c0e2bd3a8a09d016cfa90c4e88611.pdf', 1, 1, 1),
+(5, '2022-03-16', '2022-03-31', 3, 'bagus', 1, '17b38fc02fd7e92f3edeb6318e3066d8.pdf', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -277,20 +278,21 @@ INSERT INTO `status_kerja_sama` (`id_status_kerja_sama`, `status_kerja_sama`) VA
 
 CREATE TABLE `status_pengajuan` (
   `id_status_pengajuan` int(11) NOT NULL,
-  `status_pengajuan` varchar(250) NOT NULL
+  `status_pengajuan` varchar(250) NOT NULL,
+  `keterangan_pengajuan` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `status_pengajuan`
 --
 
-INSERT INTO `status_pengajuan` (`id_status_pengajuan`, `status_pengajuan`) VALUES
-(1, 'Diterima Oleh Admin'),
-(2, 'Belum Dibaca Oleh Admin'),
-(4, 'Diterima Kepala Biro'),
-(5, 'Diterima Wakil Rektor'),
-(6, 'Disetujui Rektor'),
-(7, 'Tidak Diterima(Revisi)');
+INSERT INTO `status_pengajuan` (`id_status_pengajuan`, `status_pengajuan`, `keterangan_pengajuan`) VALUES
+(1, 'Diterima Oleh Admin', NULL),
+(2, 'Belum Dibaca Oleh Admin', NULL),
+(4, 'Diterima Kepala Biro', NULL),
+(5, 'Diterima Wakil Rektor', NULL),
+(6, 'Disetujui Rektor', NULL),
+(7, 'Tidak Diterima(Revisi)', NULL);
 
 -- --------------------------------------------------------
 
@@ -443,7 +445,7 @@ ALTER TABLE `evaluasi`
 -- AUTO_INCREMENT for table `implementasi_kerja_sama`
 --
 ALTER TABLE `implementasi_kerja_sama`
-  MODIFY `id_implementasi_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_implementasi_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `jenis_pengajuan`

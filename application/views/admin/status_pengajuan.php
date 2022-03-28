@@ -97,6 +97,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Status Pengajuan</th>
+                                        <th>Keterangan Pengajuan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -110,12 +111,14 @@
                   $id++;
                   $id_status_pengajuan = $i['id_status_pengajuan'];
                   $status_pengajuan = $i['status_pengajuan'];
+                  $keterangan_pengajuan = $i['keterangan_pengajuan'];
                  
 
               ?>
                                     <tr>
                                         <td><?= $id ?></td>
                                         <td><?= $status_pengajuan ?></td>
+                                        <td><?= $keterangan_pengajuan ?></td>
                                         <td>
                                             <div class="table-resposive">
                                                 <div class="table table-striped table-hover ">
@@ -143,15 +146,25 @@
                                                     <form action="<?= base_url(); ?>status_pengajuan/edit_data_admin"
                                                         enctype="multipart/form-data" method="POST">
                                                         <div class="mb-3">
-                                                            <label for="status_pengajuan"
-                                                                class="form-label">Status Pengajuan</label>
                                                             <input type="text" name="id_status_pengajuan"
                                                                 value="<?= $id_status_pengajuan?>" hidden>
-                                                            <input type="text" class="form-control"
-                                                                id="status_pengajuan"
-                                                                aria-describedby="status_pengajuan"
-                                                                name="status_pengajuan"
-                                                                value="<?= $status_pengajuan ?>">
+                                                            <div class="mb-3">
+                                                                <label for="status_pengajuan" class="form-label">Status
+                                                                    Pengajuan</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="status_pengajuan"
+                                                                    aria-describedby="status_pengajuan"
+                                                                    name="status_pengajuan"
+                                                                    value="<?= $status_pengajuan ?>">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="keterangan_pengajuan"
+                                                                    class="form-label">Keterangan
+                                                                    Pengajuan</label>
+                                                                <textarea id="keterangan_pengajuan"
+                                                                    name="keterangan_pengajuan" rows="4"
+                                                                    cols="60"><?=$keterangan_pengajuan?></textarea>
+                                                            </div>
                                                         </div>
 
                                                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -179,11 +192,17 @@
                                         <form action="<?= base_url(); ?>status_pengajuan/input_data_admin"
                                             enctype="multipart/form-data" method="POST">
                                             <div class="mb-3">
-                                                <label for="status_pengajuan" class="form-label">Status Pengajuan</label>
+                                                <label for="status_pengajuan" class="form-label">Status
+                                                    Pengajuan</label>
                                                 <input type="text" class="form-control" id="status_pengajuan"
                                                     aria-describedby="status_pengajuan" name="status_pengajuan">
                                             </div>
-
+                                            <div class="mb-3">
+                                                <label for="keterangan_pengajuan" class="form-label">Keterangan
+                                                    Pengajuan</label>
+                                                <textarea id="keterangan_pengajuan" name="keterangan_pengajuan" rows="4"
+                                                    cols="60"></textarea>
+                                            </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>
                                     </div>

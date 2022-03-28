@@ -97,6 +97,7 @@
                                         <th>File Data Pengajuan</th>
                                         <th>Negara Asal Pengajuan</th>
                                         <th>Status Pengajuan</th>
+                                        <th>Keterangan Pengajuan</th>
                                         <th>Kategori Kerjasama</th>
                                         <th>Pengirim</th>
                                         <th colspan="2">Aksi</th>
@@ -116,6 +117,7 @@
                                   $file_data_pengajuan = $i['file_data_pengajuan'];
                                   $negara_pengajuan = $i['negara_pengajuan'];
                                   $status_pengajuan = $i['status_pengajuan'];
+                                  $keterangan_pengajuan = $i['keterangan_pengajuan'];
                                   $nama_kategori_kerja_sama = $i['nama_kategori_kerja_sama'];
                                   $nama_mitra = $i['nama_mitra'];
                                   $id_data_pengajuan = $i['id_data_pengajuan'];
@@ -139,6 +141,7 @@
                                         </td>
                                         <td><?=  $negara_pengajuan ?></td>
                                         <td><?=  $status_pengajuan ?></td>
+                                        <td><?=  $keterangan_pengajuan ?></td>
                                         <td><?=  $nama_kategori_kerja_sama ?></td>
                                         <td><?= $nama_mitra ?></td>
                                         <td>

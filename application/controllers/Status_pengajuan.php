@@ -26,8 +26,9 @@ class Status_pengajuan extends CI_Controller {
     {
         if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
             $status_pengajuan = $this->input->post("status_pengajuan");
+            $keterangan_pengajuan = $this->input->post("keterangan_pengajuan");
 
-            $hasil = $this->m_status_pengajuan->tambah_status_pengajuan($status_pengajuan );
+            $hasil = $this->m_status_pengajuan->tambah_status_pengajuan($status_pengajuan, $keterangan_pengajuan);
 	
 			if($hasil==false){
 				$this->session->set_flashdata('eror','eror');
@@ -49,9 +50,11 @@ class Status_pengajuan extends CI_Controller {
     {
         if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
             $status_pengajuan = $this->input->post("status_pengajuan");
+            $keterangan_pengajuan = $this->input->post("keterangan_pengajuan");
             $id_status_pengajuan = $this->input->post("id_status_pengajuan");
 
-            $hasil = $this->m_status_pengajuan->update_status_pengajuan($status_pengajuan, $id_status_pengajuan );
+
+            $hasil = $this->m_status_pengajuan->update_status_pengajuan($status_pengajuan,  $id_status_pengajuan, $keterangan_pengajuan );
 	
 			if($hasil==false){
 				$this->session->set_flashdata('eror','eror');
