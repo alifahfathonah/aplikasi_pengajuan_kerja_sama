@@ -46,7 +46,7 @@ class Data_pengajuan extends CI_Controller {
 	public function edit_data_admin($id_data_pengajuan){
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 			$id_status_pengajuan = $this->input->post("id_status_pengajuan");
-			$id_masa_berlaku = $this->input->post("id_masa_berlaku");
+			
 			
 		// $file_name = md5($no_usulan.$keterangan);
 		
@@ -68,7 +68,7 @@ class Data_pengajuan extends CI_Controller {
 
 
 		
-			$hasil = $this->m_data_pengajuan->update_status_data_pengajuan($id_status_pengajuan, $id_data_pengajuan, $id_masa_berlaku);
+			$hasil = $this->m_data_pengajuan->update_status_data_pengajuan($id_status_pengajuan, $id_data_pengajuan);
 	
 			if($hasil==false){
 				$this->session->set_flashdata('eror_edit','eror_edit');
@@ -144,7 +144,7 @@ class Data_pengajuan extends CI_Controller {
 	public function edit_data_mitra($id_data_pengajuan){
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 			$id_status_pengajuan = $this->input->post("id_status_pengajuan");
-			$id_masa_berlaku = $this->input->post("id_masa_berlaku");
+			
 			
 		// $file_name = md5($no_usulan.$keterangan);
 		
@@ -166,7 +166,7 @@ class Data_pengajuan extends CI_Controller {
 
 
 		
-			$hasil = $this->m_data_pengajuan->update_status_data_pengajuan($id_status_pengajuan, $id_data_pengajuan, $id_masa_berlaku);
+			$hasil = $this->m_data_pengajuan->update_status_data_pengajuan($id_status_pengajuan, $id_data_pengajuan);
 	
 			if($hasil==false){
 				$this->session->set_flashdata('eror_edit','eror_edit');

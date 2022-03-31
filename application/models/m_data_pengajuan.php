@@ -2,10 +2,10 @@
 
 class M_data_pengajuan extends CI_Model
 {
-    public function tambah_data_pengajuan($no_pengajuan, $keterangan, $id_bentuk_perjanjian, $id_jenis_pengajuan, $file_data_pengajuan, $id_negara_asal_pengajuan, $id_status_pengajuan, $id_kategori_kerjasama, $id_user_penerima, $id_user_pengirim, $id_masa_berlaku ){
+    public function tambah_data_pengajuan($no_pengajuan, $keterangan, $id_bentuk_perjanjian, $id_jenis_pengajuan, $file_data_pengajuan, $id_negara_asal_pengajuan, $id_status_pengajuan, $id_kategori_kerjasama, $id_user_penerima, $id_user_pengirim){
         $this->db->trans_start();
-        $this->db->query("INSERT INTO data_pengajuan(no_pengajuan, keterangan, id_bentuk_perjanjian, id_jenis_pengajuan, file_data_pengajuan, id_negara_asal_pengajuan, id_status_pengajuan, id_kategori_kerjasama, id_user_penerima, id_user_pengirim, id_masa_berlaku) 
-        VALUES ('$no_pengajuan', '$keterangan','$id_bentuk_perjanjian','$id_jenis_pengajuan','$file_data_pengajuan','$id_negara_asal_pengajuan','$id_status_pengajuan','$id_kategori_kerjasama','$id_user_penerima','$id_user_pengirim','$id_masa_berlaku')");
+        $this->db->query("INSERT INTO data_pengajuan(no_pengajuan, keterangan, id_bentuk_perjanjian, id_jenis_pengajuan, file_data_pengajuan, id_negara_asal_pengajuan, id_status_pengajuan, id_kategori_kerjasama, id_user_penerima, id_user_pengirim) 
+        VALUES ('$no_pengajuan', '$keterangan','$id_bentuk_perjanjian','$id_jenis_pengajuan','$file_data_pengajuan','$id_negara_asal_pengajuan','$id_status_pengajuan','$id_kategori_kerjasama','$id_user_penerima','$id_user_pengirim')");
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
             return true;
@@ -45,8 +45,8 @@ class M_data_pengajuan extends CI_Model
          return $hsl;
     }
 
-    function update_status_data_pengajuan($id_status_pengajuan, $id_data_pengajuan, $id_masa_berlaku){
-        $hsl = $this->db->query("UPDATE data_pengajuan SET id_status_pengajuan='$id_status_pengajuan', id_masa_berlaku='$id_masa_berlaku'   WHERE id_data_pengajuan='$id_data_pengajuan'");
+    function update_status_data_pengajuan($id_status_pengajuan, $id_data_pengajuan){
+        $hsl = $this->db->query("UPDATE data_pengajuan SET id_status_pengajuan='$id_status_pengajuan' WHERE id_data_pengajuan='$id_data_pengajuan'");
          return $hsl;
      }
 

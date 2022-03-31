@@ -113,10 +113,10 @@
                                 <tbody>
                                     <?php
                                   
-                  $id = 0;
-                  foreach($implementasi_kerja_sama->result_array() as $i)
-                  :
-                  $id++;
+                  $no = 1;
+                  foreach($implementasi_kerja_sama->result_array() as $i){
+                  
+                  
                   $id_implementasi_kerja_sama = $i['id_implementasi_kerja_sama'];
                   $tanggal_dimulai = $i['tanggal_dimulai'];
                   $tanggal_berakhir = $i['tanggal_berakhir'];
@@ -127,11 +127,10 @@
                   $evaluasi = $i['evaluasi'];
                   $file_implementasi_kerja_sama = $i['file_implementasi_kerja_sama'];
                   $masa_berlaku = $i['masa_berlaku'];
-                 
 
               ?>
                                     <tr>
-                                        <td><?= $id ?></td>
+                                        <td><?= $no++; ?></td>
                                         <td><?= $tanggal_dimulai ?></td>
                                         <td><?= $tanggal_berakhir ?></td>
                                         <td><?= $nama_mitra ?></td>
@@ -354,11 +353,10 @@
                                                         <button type="submit" class="btn btn-primary">Submit</button>
                                                     </form>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
-                                    <?php endforeach;?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>

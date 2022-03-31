@@ -62,9 +62,8 @@ class Implementasi_kerja_sama extends CI_Controller {
 		$keterangan = $this->input->post("keterangan");
 		$id_bentuk_perjanjian = $this->input->post("id_bentuk_perjanjian");
 		$id_kategori_kerja_sama = $this->input->post("id_kategori_kerja_sama");
-		$id_masa_berlaku = $this->input->post("id_masa_berlaku");
 		$id_evaluasi = $this->input->post("id_evaluasi");
-
+		$id_masa_berlaku = $this->input->post("id_masa_berlaku");
 		$file_name = md5($masa_berlaku.$keterangan);
 		// echo $masa_berlaku;
 		// echo "<br>";
