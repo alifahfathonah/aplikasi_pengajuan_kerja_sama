@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php $this->load->view("admin/components/header.php") ?>
+    <?php $this->load->view("admin_utama/components/header.php") ?>
 </head>
 
 <body class="sb-nav-fixed">
@@ -65,11 +65,11 @@
     });
     </script>
     <?php } ?>
-    <?php $this->load->view("admin/components/nav_bar.php") ?>
+    <?php $this->load->view("admin_utama/components/nav_bar.php") ?>
 
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <?php $this->load->view("admin/components/side_bar.php") ?>
+            <?php $this->load->view("admin_utama/components/side_bar.php") ?>
         </div>
         <div id="layoutSidenav_content">
             <main>
@@ -192,7 +192,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form
-                                                        action="<?php echo base_url()?>Implementasi_kerja_sama/hapus_implementasi_kerja_sama/<?=$id_implementasi_kerja_sama?>"
+                                                        action="<?php echo base_url()?>Implementasi_kerja_sama/hapus_implementasi_kerja_sama_admin_utama/<?=$id_implementasi_kerja_sama?>"
                                                         method="post" enctype="multipart/form-data">
                                                         <div class="row">
                                                             <div class="col-md-12">
@@ -240,7 +240,7 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <form
-                                                        action="<?= base_url(); ?>Implementasi_kerja_sama/edit_data_admin"
+                                                        action="<?= base_url(); ?>Implementasi_kerja_sama/edit_data_admin_utama"
                                                         enctype="multipart/form-data" method="POST">
                                                         <input type="hidden" name="id_implementasi_kerja_sama"
                                                             value="<?php echo $id_implementasi_kerja_sama?>" />
@@ -397,7 +397,7 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="<?= base_url(); ?>Implementasi_kerja_sama/input_data_admin"
+                                        <form action="<?= base_url(); ?>Implementasi_kerja_sama/input_data_admin_utama"
                                             enctype="multipart/form-data" method="POST">
                                             <div class="mb-3">
                                                 <label for="tanggal_dimulai" class="form-label">Tanggal Dimulai Kerja
@@ -521,7 +521,7 @@
             </main>
         </div>
     </div>
-    <?php $this->load->view("admin/components/footer.php") ?>
+    <?php $this->load->view("admin_utama/components/footer.php") ?>
 </body>
 
 </html>

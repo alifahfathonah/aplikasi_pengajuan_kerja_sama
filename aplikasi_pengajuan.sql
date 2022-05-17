@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 01:53 PM
+-- Generation Time: May 17, 2022 at 06:44 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -65,11 +65,13 @@ CREATE TABLE `data_pengajuan` (
 --
 
 INSERT INTO `data_pengajuan` (`id_data_pengajuan`, `no_pengajuan`, `keterangan`, `id_bentuk_perjanjian`, `id_jenis_pengajuan`, `file_data_pengajuan`, `id_negara_asal_pengajuan`, `id_status_pengajuan`, `id_kategori_kerjasama`, `id_user_pengirim`, `id_user_penerima`) VALUES
-(5, '127812', 'Bagus', 1, 1, '5505741d3820aff8e4dda623519af069.pdf', 1, 4, 3, 4, 3),
+(5, '127812', 'Bagus', 1, 1, '5505741d3820aff8e4dda623519af069.pdf', 1, 2, 3, 4, 3),
 (6, '162712', 'Bagus', 2, 2, 'f9f6b6c3f8aabc51944fcf30c785a7d9.pdf', 1, 2, 2, 4, 3),
 (8, '72187182', 'Bagus', 1, 1, '4e3f0d23f1be9c80377f6773881be78c.pdf', 1, 1, 1, 3, 5),
 (9, '781718271', 'Bagus', 1, 1, '2d6f05069db9e62c6e6e4936a0e847cf.pdf', 1, 2, 1, 4, 3),
-(10, '1827187281', 'bagus', 1, 1, '84f40ca1642fa1070001eda2077b07c7.pdf', 1, 1, 1, 3, 4);
+(10, '1827187281', 'bagus', 1, 1, '84f40ca1642fa1070001eda2077b07c7.pdf', 1, 5, 1, 3, 4),
+(11, '18291291', 'Bagus', 1, 1, '3648dfa99d92403c93449dbfc111d1a3.pdf', 1, 2, 1, 3, 4),
+(12, '12812781', 'Bagus', 1, 1, '5f04369e51b09050db7131f00291bb31.pdf', 1, 2, 1, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -104,19 +106,11 @@ CREATE TABLE `implementasi_kerja_sama` (
   `keterangan` varchar(250) NOT NULL,
   `id_bentuk_perjanjian` int(11) NOT NULL,
   `file_implementasi_kerja_sama` varchar(250) NOT NULL,
+  `foto_implementasi_kerja_sama` varchar(256) NOT NULL,
   `id_kategori_kerja_sama` int(11) NOT NULL,
   `id_masa_berlaku` int(11) NOT NULL,
   `id_evaluasi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `implementasi_kerja_sama`
---
-
-INSERT INTO `implementasi_kerja_sama` (`id_implementasi_kerja_sama`, `tanggal_dimulai`, `tanggal_berakhir`, `id_lembaga_mitra`, `keterangan`, `id_bentuk_perjanjian`, `file_implementasi_kerja_sama`, `id_kategori_kerja_sama`, `id_masa_berlaku`, `id_evaluasi`) VALUES
-(3, '2022-01-04', '2022-01-23', 3, 'Bagus', 1, '5462929db201a15aaf6d2d3400b66773.pdf', 1, 1, 1),
-(4, '2022-03-01', '2022-03-23', 5, 'bagus', 1, '2841c0e2bd3a8a09d016cfa90c4e88611.pdf', 1, 1, 1),
-(5, '2022-03-16', '2022-03-31', 3, 'bagus', 1, '17b38fc02fd7e92f3edeb6318e3066d8.pdf', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -179,10 +173,10 @@ CREATE TABLE `kerja_sama_eksternal` (
 --
 
 INSERT INTO `kerja_sama_eksternal` (`id_kerja_sama_eksternal`, `no_usulan`, `keterangan`, `id_lembaga_mitra`, `id_pengusul`, `id_status_kerja_sama`, `file_kerja_sama_eksternal`, `id_kategori_kerja_sama`) VALUES
-(17, '192182', 'Bagus', '3', 4, 2, '0b959fb78f0fb7ec3a31d6bf13db00e8.pdf', 1),
 (18, '128178', 'Bagus', '3', 3, 1, 'e825ceea3b59c56d0fcaddb62cc139e91.pdf', 3),
 (19, '172817', 'Bagus', '3', 3, 1, 'a29ef4510b284567b939e2cb137f0f23.pdf', 1),
-(20, '123', 'Bagus', '3', 5, 1, '4cdc245acfc28747b389cf14b02a0b61.pdf', 1);
+(20, '123', 'Bagus', '3', 5, 1, '4cdc245acfc28747b389cf14b02a0b61.pdf', 1),
+(21, '1278172', 'bagus', '3', 3, 1, '9e9e9760f759ccef0ce743450322e944.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -279,7 +273,7 @@ INSERT INTO `status_kerja_sama` (`id_status_kerja_sama`, `status_kerja_sama`) VA
 CREATE TABLE `status_pengajuan` (
   `id_status_pengajuan` int(11) NOT NULL,
   `status_pengajuan` varchar(250) NOT NULL,
-  `keterangan_pengajuan` text DEFAULT NULL
+  `keterangan_pengajuan` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -287,12 +281,12 @@ CREATE TABLE `status_pengajuan` (
 --
 
 INSERT INTO `status_pengajuan` (`id_status_pengajuan`, `status_pengajuan`, `keterangan_pengajuan`) VALUES
-(1, 'Diterima Oleh Admin', NULL),
-(2, 'Belum Dibaca Oleh Admin', NULL),
-(4, 'Diterima Kepala Biro', NULL),
-(5, 'Diterima Wakil Rektor', NULL),
-(6, 'Disetujui Rektor', NULL),
-(7, 'Tidak Diterima(Revisi)', NULL);
+(1, 'Diterima Oleh Admin', 'Ada\r\n'),
+(2, 'Belum Dibaca Oleh Admin', 'Ada'),
+(4, 'Diterima Kepala Biro', 'Ada\r\n'),
+(5, 'Diterima Wakil Rektor', 'none'),
+(6, 'Disetujui Rektor', 'none'),
+(7, 'Tidak Diterima(Revisi)', 'none');
 
 -- --------------------------------------------------------
 
@@ -316,9 +310,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `nama_mitra`, `no_hp`, `alamat_mitra`, `id_user_level`) VALUES
-(3, 'admin', 'admin', 'taufiiqulhakim23@gmail.com', 'UIGM', '0812781728', '', 1),
+(3, 'kepala_bagian', 'kepala_bagian', 'taufiiqulhakim23@gmail.com', 'UIGM', '0812781728', '', 1),
 (4, 'mitra', 'mitra', 'wahyu@gmail.com', 'Universitas Bina Darma', '0816271627', '', 2),
-(5, 'mitra unsri', '123', 'mitra_unsri@gmail.com', 'Universitas Sriwijaya', '0821762716266', '', 2);
+(5, 'mitra unsri', '123', 'mitra_unsri@gmail.com', 'Universitas Sriwijaya', '0821762716266', '', 2),
+(6, 'admin123', 'admin123', 'malian123@gmail.com', 'admin', '0812781728', 'Jl. Sekip', 3);
 
 -- --------------------------------------------------------
 
@@ -433,7 +428,7 @@ ALTER TABLE `bentuk_perjanjian`
 -- AUTO_INCREMENT for table `data_pengajuan`
 --
 ALTER TABLE `data_pengajuan`
-  MODIFY `id_data_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_data_pengajuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `evaluasi`
@@ -445,7 +440,7 @@ ALTER TABLE `evaluasi`
 -- AUTO_INCREMENT for table `implementasi_kerja_sama`
 --
 ALTER TABLE `implementasi_kerja_sama`
-  MODIFY `id_implementasi_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_implementasi_kerja_sama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `jenis_pengajuan`
@@ -463,13 +458,13 @@ ALTER TABLE `kategori_kerja_sama`
 -- AUTO_INCREMENT for table `kerja_sama_eksternal`
 --
 ALTER TABLE `kerja_sama_eksternal`
-  MODIFY `id_kerja_sama_eksternal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_kerja_sama_eksternal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `kerja_sama_internal`
 --
 ALTER TABLE `kerja_sama_internal`
-  MODIFY `id_kerja_sama_internal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kerja_sama_internal` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `masa_berlaku`
@@ -499,7 +494,7 @@ ALTER TABLE `status_pengajuan`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_level`

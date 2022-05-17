@@ -48,6 +48,18 @@ class Login extends CI_Controller {
 				$this->session->set_flashdata('login_success','login_success');
 				redirect('Dashboard/dashboard_mitra');
 
+			}else if($user['id_user_level'] == 3){
+
+				$this->session->set_userdata('logged_in', true);
+				$this->session->set_userdata('id', $user['id']);
+				$this->session->set_userdata('username', $user['username']);
+				$this->session->set_userdata('email', $user['email']);
+				$this->session->set_userdata('nama_mitra', $user['nama_mitra']);
+				$this->session->set_userdata('no_hp', $user['no_hp']);
+				$this->session->set_userdata('id_user_level', $user['id_user_level']);
+				$this->session->set_flashdata('login_success','login_success');
+				redirect('Dashboard/dashboard_admin_utama');
+
 			}else{
 				$this->session->set_flashdata('loggin_err','loggin_err');
 				redirect('Login/index');
